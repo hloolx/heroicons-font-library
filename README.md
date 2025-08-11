@@ -7,7 +7,9 @@
 ![Icons](https://img.shields.io/badge/icons-224-orange)
 ![Language](https://img.shields.io/badge/language-中文/English-red)
 
-[在线预览 Demo](https://hloolx.github.io/heroicons-font-library/) | [English](#english) | [中文](#中文)
+[在线预览 Demo](https://heroicons.15o.cc/) | [English](#english) | [中文](#中文)
+
+[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/hloolx/heroicons-font-library&project-name=heroicons-font&output-directory=.)
 
 </div>
 
@@ -243,6 +245,20 @@ This project is open source under the MIT License:
 
 ---
 
+## 🚀 快速部署 / Quick Deploy
+
+### EdgeOne Pages 一键部署（推荐）
+
+[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/hloolx/heroicons-font-library&project-name=heroicons-font&output-directory=.)
+
+[EdgeOne](https://edgeone.ai/) 提供免费的静态网站托管服务，具有以下优势：
+- ⚡ 亚洲地区访问速度快
+- 🔒 内置安全防护
+- 🌏 全球 CDN 加速
+- 💰 每月 100GB 免费流量
+
+[查看详细部署教程](./EDGEONE_DEPLOY.md)
+
 ## 📁 项目结构 / Project Structure
 
 ```
@@ -255,6 +271,7 @@ heroicons-font/
 ├── iconfont.woff2      # 字体文件 / Font file
 ├── iconfont.json       # 图标数据 / Icon data
 ├── icon-names.js       # 中英文名称映射 / Name mapping
+├── edgeone.json        # EdgeOne 部署配置 / EdgeOne config
 └── README.md          # 说明文档 / Documentation
 ```
 
