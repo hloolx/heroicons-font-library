@@ -7,7 +7,7 @@
 ![Icons](https://img.shields.io/badge/icons-224-orange)
 ![Language](https://img.shields.io/badge/language-中文/English-red)
 
-[在线预览 Demo](https://your-demo-url.com) | [English](#english) | [中文](#中文)
+[在线预览 Demo](https://hloolx.github.io/heroicons-font-library/) | [English](#english) | [中文](#中文)
 
 </div>
 
@@ -267,16 +267,16 @@ Contributions are welcome! Please feel free to submit Issues and Pull Requests.
 ## 📮 联系方式 / Contact
 
 - Blog: [www.alantx.cn](https://www.alantx.cn)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your-email@example.com
+- GitHub: [@hloolx](https://github.com/hloolx)
+- cnb.cool: [hloolx.cnb.cool](https://hloolx.cnb.cool)
 
 ## 📊 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/heroicons-font&type=Date)](https://star-history.com/#yourusername/heroicons-font&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=hloolx/heroicons-font-library&type=Date)](https://star-history.com/#hloolx/heroicons-font-library&Date)
 
 ---
 
 <div align="center">
-Made with ❤️ by Alan in 2025
+Made with ❤️ by hloolx in 2025
 </div>#   h e r o i c o n s - f o n t - l i b r a r y  
  
