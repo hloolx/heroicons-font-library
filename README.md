@@ -11,6 +11,14 @@
 
 [![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/hloolx/heroicons-font-library&project-name=heroicons-font&output-directory=.)
 
+<br/>
+
+### 🚀 本项目 CDN 加速及安全防护由 Tencent EdgeOne 赞助
+
+<a href="https://edgeone.ai/zh?from=github" target="_blank">
+  <img src="https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png" alt="Tencent EdgeOne" height="40">
+</a>
+
 </div>
 
 ## 中文
@@ -294,5 +302,19 @@ Contributions are welcome! Please feel free to submit Issues and Pull Requests.
 ---
 
 <div align="center">
+
 Made with ❤️ by hloolx in 2025
+
+<br/>
+
+**🌐 CDN & Security Sponsor**
+
+<a href="https://edgeone.ai/zh?from=github" target="_blank">
+  <img src="https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png" alt="Powered by Tencent EdgeOne" height="30">
+</a>
+
+<br/>
+
+本项目 CDN 加速及安全防护由 [Tencent EdgeOne](https://edgeone.ai/zh?from=github) 赞助
+
 </div>
