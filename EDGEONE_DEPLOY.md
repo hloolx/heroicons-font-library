@@ -96,24 +96,23 @@
 
 ```json
 {
-  "build": {
-    "command": "",        // 构建命令，静态项目留空
-    "output": "."         // 输出目录，使用根目录
-  },
-  "deploy": {
-    "projectName": "heroicons-font-library",
-    "installCommand": "", // 安装命令，静态项目留空
-    "headers": [
-      {
-        "key": "Cache-Control",
-        "value": "public, max-age=3600"  // CDN缓存1小时
-      },
-      {
-        "key": "X-Content-Type-Options",
-        "value": "nosniff"
-      }
-    ]
-  }
+  "name": "heroicons-font-library",
+  "buildCommand": "",        // 构建命令，静态项目留空
+  "installCommand": "",      // 安装命令，静态项目留空
+  "outputDirectory": ".",    // 输出目录，使用根目录
+  "headers": [              // 自定义响应头配置
+    {
+      "source": "/*.css",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ],
+  "redirects": [],          // 重定向规则
+  "rewrites": []            // 重写规则
 }
 ```
 
@@ -168,15 +167,15 @@ git push origin main
 
 ### 1. 配置重定向
 
-在 `edgeone.json` 中添加：
+在 `edgeone.json` 中添加（最多30条）：
 
 ```json
 {
   "redirects": [
     {
-      "from": "/old-path",
-      "to": "/new-path",
-      "status": 301
+      "source": "/old-path",
+      "destination": "/new-path",
+      "permanent": true  // 301永久重定向
     }
   ]
 }
@@ -184,16 +183,23 @@ git push origin main
 
 ### 2. 自定义响应头
 
+根据官方文档，headers配置格式：
+
 ```json
 {
   "headers": [
     {
-      "key": "X-Frame-Options",
-      "value": "SAMEORIGIN"
-    },
-    {
-      "key": "Content-Security-Policy",
-      "value": "default-src 'self'"
+      "source": "/*",  // 路径模式
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
     }
   ]
 }
@@ -201,15 +207,40 @@ git push origin main
 
 ### 3. 配置缓存策略
 
+为不同文件类型设置缓存：
+
 ```json
 {
   "headers": [
     {
-      "key": "Cache-Control",
-      "value": "public, max-age=31536000",
-      "path": "*.woff2"  // 字体文件长期缓存
+      "source": "/*.woff2",  // 字体文件
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "/*.css",  // 样式文件
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     }
   ]
+}
+```
+
+### 4. 支持的 Node.js 版本
+
+如需指定 Node.js 版本：
+
+```json
+{
+  "nodeVersion": "20.18.0"  // 支持: 14.21.3, 16.20.2, 18.20.4, 20.18.0, 22.11.0
 }
 ```
 

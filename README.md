@@ -88,21 +88,29 @@ await SVGFixer(inputDir, outputDir, options).fix();
 
 ### 📦 使用方法
 
-#### 在项目中引入
+#### CDN 引用（推荐）
+
+直接通过 CDN 使用，无需下载：
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://heroicons.15o.cc/iconfont.css">
+
+<!-- 使用图标 -->
+<i class="iconfont icon-home"></i>
+<i class="iconfont icon-user"></i>
+<i class="iconfont icon-heart"></i>
+```
+
+> 已配置 CORS，支持跨域使用。[查看详细 CDN 使用文档](./CDN_USAGE.md)
+
+#### 本地引入
 
 1. 下载字体文件和 CSS 文件
 2. 在 HTML 中引入：
 
 ```html
 <link rel="stylesheet" href="iconfont.css">
-```
-
-3. 使用图标：
-
-```html
-<i class="iconfont icon-home"></i>
-<i class="iconfont icon-user"></i>
-<i class="iconfont icon-heart"></i>
 ```
 
 #### 自定义大小和颜色
