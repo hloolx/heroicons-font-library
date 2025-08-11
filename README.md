@@ -251,11 +251,11 @@ This project is open source under the MIT License:
 
 [![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/hloolx/heroicons-font-library&project-name=heroicons-font&output-directory=.)
 
-[EdgeOne](https://edgeone.ai/) 提供免费的静态网站托管服务，具有以下优势：
-- ⚡ 亚洲地区访问速度快
-- 🔒 内置安全防护
-- 🌏 全球 CDN 加速
-- 💰 每月 100GB 免费流量
+[EdgeOne](https://edgeone.ai/) 提供强大的免费静态网站托管服务：
+- ⚡ **不限量流量** - 无需担心超额
+- 🔒 **安全防护** - DDoS + WAF 防护
+- 🌏 **全球 CDN** - 边缘节点加速
+- 🆓 **完全免费** - 个人项目永久免费
 
 [查看详细部署教程](./EDGEONE_DEPLOY.md)
 
