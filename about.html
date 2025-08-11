@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于本图标库 | About</title>
+  <link rel="stylesheet" href="iconfont.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #dbeafe;
+      --background: #ffffff;
+      --card-bg: #ffffff;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --border-color: #e5e7eb;
+      --hover-bg: #f3f4f6;
+      --success-color: #10b981;
+      --code-bg: #f9fafb;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--background);
+      min-height: 100vh;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .header {
+      background: var(--primary-color);
+      padding: 1.5rem;
+      color: white;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-links {
+      margin-top: 1rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 0.375rem;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section h3 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.75rem 0;
+      color: var(--text-primary);
+    }
+
+    .section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .section ul li {
+      padding: 0.5rem 0;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .section ul li:before {
+      content: "✓";
+      color: var(--success-color);
+      font-weight: bold;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+    }
+
+    .code-block pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: var(--primary-light);
+      color: var(--primary-color);
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+      bottom: 0;
+      width: 2px;
+      background: var(--border-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      left: -1.5rem;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--border-color);
+    }
+
+    .timeline-item h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .link-card {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .link-card:hover {
+      border-color: var(--primary-color);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .link-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .link-content h4 {
+      margin-bottom: 0.25rem;
+      color: var(--primary-color);
+    }
+
+    .link-content p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 3rem;
+    }
+
+    .footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .section {
+        padding: 1.5rem;
+      }
+      
+      .nav-links a {
+        margin: 0.25rem;
+        font-size: 0.875rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>关于本图标库</h1>
+    <p>基于 Heroicons 构建的字体图标库</p>
+    <div class="nav-links">
+      <a href="index.html">🏠 返回图标库</a>
+      <a href="https://github.com/tailwindlabs/heroicons" target="_blank">🔗 Heroicons 官方</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- 项目简介 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-information-circle"></i>
+        项目简介
+      </h2>
+      <p>
+        本图标库基于 <strong>Heroicons</strong> 开源图标集构建，通过技术转换制作成易用的字体图标库。
+        所有图标均遵循 MIT 开源协议，可免费用于商业和个人项目。
+      </p>
+      <div class="links">
+        <span class="badge">MIT License</span>
+        <span class="badge">224个图标</span>
+        <span class="badge">支持中英文搜索</span>
+        <span class="badge">一键复制</span>
+      </div>
+      
+      <h3 style="margin-top: 1.5rem;">🎯 制作初衷</h3>
+      <p>
+        在使用 Heroicons 时发现其 outline 图标采用 stroke 方式绘制，无法直接作为字体图标使用。
+        GitHub 上虽然有各种图标库，但缺少将 Heroicons 转换为字体图标的完整解决方案。
+        因此决定自己动手，将这套优秀的图标集转换为更易用的字体格式，并分享给社区。
+      </p>
+      <ul>
+        <li>填补 GitHub 上 Heroicons 字体版本的空白</li>
+        <li>为国内开发者提供更便捷的使用方式</li>
+        <li>支持中文搜索，提升使用体验</li>
+        <li>为个人博客 <a href="https://www.alantx.cn" target="_blank" style="color: #2563eb;">www.alantx.cn</a> 提供图标支持</li>
+      </ul>
+    </section>
+
+    <!-- 版权说明 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-shield-check"></i>
+        版权说明
+      </h2>
+      <h3>关于 Heroicons</h3>
+      <p>
+        Heroicons 是由 Tailwind CSS 团队创建的一套精美的 SVG 图标集，采用 MIT 开源协议发布。
+      </p>
+      <ul>
+        <li>原始图标版权归 Tailwind Labs Inc. 所有</li>
+        <li>基于 MIT License 协议，允许自由使用、修改和分发</li>
+        <li>无需支付费用，可用于商业项目</li>
+        <li>修改和再分发时需保留原始版权声明</li>
+      </ul>
+      
+      <h3>MIT 协议要点</h3>
+      <div class="code-block">
+        <pre>MIT License
+
+Copyright (c) 2020 Refactoring UI Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software...</pre>
+      </div>
+    </section>
+
+    <!-- 制作过程 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-cog"></i>
+        制作过程
+      </h2>
+      <p>
+        由于 Heroicons 原始的 outline 图标使用 stroke（描边）方式绘制，无法直接转换为字体图标，
+        因此进行了以下技术处理：
+      </p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>步骤 1：获取源文件</h4>
+          <p>从 Heroicons GitHub 仓库下载所有 24x24 outline SVG 图标（共324个）</p>
+        </div>
+        
+        <div class="timeline-item">
+          <h4>步骤 2：Stroke 转 Path</h4>
+          <p>使用 <code>oslllo-svg-fixer</code> 库将描边（stroke）转换为填充路径（path）</p>
+          <div class="code-block">
+            <pre>npm install oslllo-svg-fixer
+
+const SVGFixer = require('oslllo-svg-fixer');
+await SVGFixer(inputDir, outputDir, {
+    traceResolution: 600
+}).fix();</pre>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <h4>步骤 3：生成字体文件</h4>
+          <p>使用阿里巴巴 iconfont.cn 平台将 SVG 转换为字体文件（.ttf, .woff, .woff2）</p>
+        </div>
+        
+        <div class="timeline-item">
+          <h4>步骤 4：创建图标库界面</h4>
+          <p>开发了这个图标预览和搜索界面，支持中英文双语搜索和一键复制功能</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技术栈 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-code-bracket"></i>
+        技术栈
+      </h2>
+      <h3>转换工具</h3>
+      <ul>
+        <li><strong>oslllo-svg-fixer</strong> - 将 stroke SVG 转换为填充路径</li>
+        <li><strong>iconfont.cn</strong> - 阿里巴巴字体图标平台，生成字体文件</li>
+        <li><strong>Node.js</strong> - 运行转换脚本</li>
+      </ul>
+      
+      <h3>前端技术</h3>
+      <ul>
+        <li><strong>原生 HTML/CSS/JavaScript</strong> - 无框架依赖，轻量高效</li>
+        <li><strong>CSS Variables</strong> - 主题颜色管理</li>
+        <li><strong>Async/Await</strong> - 异步加载图标数据</li>
+        <li><strong>Responsive Design</strong> - 响应式布局</li>
+      </ul>
+    </section>
+
+    <!-- 使用说明 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-book-open"></i>
+        使用说明
+      </h2>
+      <h3>在项目中使用</h3>
+      <p>1. 引入字体文件和 CSS：</p>
+      <div class="code-block">
+        <pre>&lt;link rel="stylesheet" href="iconfont.css"&gt;</pre>
+      </div>
+      
+      <p>2. 在 HTML 中使用图标：</p>
+      <div class="code-block">
+        <pre>&lt;i class="iconfont icon-home"&gt;&lt;/i&gt;
+&lt;i class="iconfont icon-user"&gt;&lt;/i&gt;
+&lt;i class="iconfont icon-heart"&gt;&lt;/i&gt;</pre>
+      </div>
+      
+      <h3>功能特性</h3>
+      <ul>
+        <li>点击图标即可复制类名（不含前缀点号）</li>
+        <li>支持中英文关键词搜索</li>
+        <li>支持模糊匹配搜索</li>
+        <li>响应式设计，适配各种屏幕</li>
+        <li>中英文界面切换</li>
+      </ul>
+    </section>
+
+    <!-- 相关链接 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-link"></i>
+        相关链接
+      </h2>
+      <div class="links">
+        <a href="https://github.com/tailwindlabs/heroicons" target="_blank" class="link-card">
+          <span class="link-icon">🎨</span>
+          <div class="link-content">
+            <h4>Heroicons</h4>
+            <p>原始图标库官方仓库</p>
+          </div>
+        </a>
+        
+        <a href="https://www.iconfont.cn/" target="_blank" class="link-card">
+          <span class="link-icon">🔤</span>
+          <div class="link-content">
+            <h4>iconfont.cn</h4>
+            <p>阿里巴巴字体图标平台</p>
+          </div>
+        </a>
+        
+        <a href="https://github.com/oslllo/svg-fixer" target="_blank" class="link-card">
+          <span class="link-icon">🔧</span>
+          <div class="link-content">
+            <h4>SVG Fixer</h4>
+            <p>SVG 转换工具</p>
+          </div>
+        </a>
+        
+        <a href="https://tailwindcss.com/" target="_blank" class="link-card">
+          <span class="link-icon">💨</span>
+          <div class="link-content">
+            <h4>Tailwind CSS</h4>
+            <p>实用优先的 CSS 框架</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 致谢 -->
+    <section class="section">
+      <h2>
+        <i class="iconfont icon-heart"></i>
+        致谢
+      </h2>
+      <ul>
+        <li>感谢 <strong>Tailwind Labs</strong> 团队创建并开源 Heroicons</li>
+        <li>感谢 <strong>Steve Schoger</strong> 的精美图标设计</li>
+        <li>感谢 <strong>阿里巴巴 iconfont</strong> 提供免费的字体转换服务</li>
+        <li>感谢所有开源社区的贡献者</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>
+      本图标库基于 <a href="https://github.com/tailwindlabs/heroicons" target="_blank">Heroicons</a> 
+      构建，遵循 <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a> 协议
+    </p>
+    <p>
+      图标版权归 Tailwind Labs Inc. 所有 | 转换制作 2025 | 
+      <a href="https://www.alantx.cn" target="_blank">Alan's Blog</a>
+    </p>
+  </footer>
+</body>
+</html>

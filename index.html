@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Library | 图标库</title>
+  <link rel="stylesheet" href="iconfont.css">
+  <script src="icon-names.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #dbeafe;
+      --background: #ffffff;
+      --card-bg: #ffffff;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --border-color: #e5e7eb;
+      --hover-bg: #f3f4f6;
+      --success-color: #10b981;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--background);
+      min-height: 100vh;
+      color: var(--text-primary);
+    }
+
+    .app-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: var(--primary-color);
+      padding: 1.5rem;
+      color: white;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+
+    .header p {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .toolbar {
+      background: var(--card-bg);
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .toolbar-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-container {
+      flex: 1;
+      min-width: 280px;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.625rem 1rem 0.625rem 2.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      outline: none;
+      background: var(--hover-bg);
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-color);
+      background: white;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.875rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      pointer-events: none;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .icon-count {
+      padding: 0.5rem 1rem;
+      background: var(--hover-bg);
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .icon-count strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .lang-switcher {
+      display: flex;
+      background: var(--hover-bg);
+      border-radius: 0.5rem;
+      padding: 0.25rem;
+      gap: 0.25rem;
+    }
+
+    .lang-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .lang-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--text-primary);
+    }
+
+    .main-content {
+      flex: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 2rem 1rem;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .icon-card {
+      background: var(--hover-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 1.25rem 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .icon-card:hover {
+      background: white;
+      border-color: var(--primary-color);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
+    }
+
+    .icon-card:active {
+      transform: translateY(0);
+    }
+
+    .icon-card i {
+      font-size: 2rem;
+      color: var(--text-primary);
+      transition: all 0.2s;
+      margin-bottom: 0.5rem;
+    }
+
+    .icon-card:hover i {
+      color: var(--primary-color);
+      transform: scale(1.1);
+    }
+
+    .icon-name {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-align: center;
+      word-break: break-word;
+      line-height: 1.3;
+      max-width: 100%;
+      padding: 0 0.25rem;
+    }
+    
+    .icon-name-zh {
+      font-size: 0.65rem;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+    
+    .icon-name-en {
+      font-size: 0.6rem;
+      color: var(--text-secondary);
+      opacity: 0.8;
+    }
+
+    .copied-badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--success-color);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.625rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(-0.5rem);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+
+    .icon-card.copied .copied-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-secondary);
+    }
+
+    .empty-state-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.3;
+    }
+
+    .empty-state h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .empty-state p {
+      font-size: 0.95rem;
+    }
+
+    .loading-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-secondary);
+    }
+
+    .spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 3px solid var(--border-color);
+      border-top-color: var(--primary-color);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--primary-color);
+      color: white;
+      padding: 0.875rem 1.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      opacity: 0;
+      transition: all 0.3s;
+      pointer-events: none;
+      z-index: 1000;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .footer {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+      
+      .toolbar-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .search-container {
+        max-width: 100%;
+      }
+      
+      .toolbar-actions {
+        justify-content: space-between;
+      }
+      
+      .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 0.5rem;
+      }
+      
+      .icon-card {
+        padding: 1rem 0.25rem;
+        min-height: 90px;
+      }
+      
+      .icon-card i {
+        font-size: 1.75rem;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="page-title">Icon Library</h1>
+        <p class="page-subtitle">Click any icon to copy its class name</p>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="toolbar-content">
+        <div class="search-container">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          </svg>
+          <input 
+            type="text" 
+            class="search-input" 
+            id="searchInput" 
+            placeholder="Search icons..."
+            autocomplete="off"
+          >
+        </div>
+        
+        <div class="toolbar-actions">
+          <div class="icon-count">
+            <strong id="visibleCount">0</strong> / <span id="totalCount">0</span> <span class="count-label">icons</span>
+          </div>
+          
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <div id="iconGrid" class="icon-grid">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading icons...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        © 2025 Icon Library · 
+        <a href="about.html" style="color: #2563eb; text-decoration: none;">关于本站</a> · 
+        <a href="https://www.alantx.cn" target="_blank" style="color: #2563eb; text-decoration: none;">Alan's Blog</a> · 
+        <span class="footer-tip">Click any icon to copy its class name.</span>
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.8;">
+        Icons from <a href="https://github.com/tailwindlabs/heroicons" target="_blank" style="color: #2563eb;">Heroicons</a> 
+        under MIT License
+      </p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Application state
+    const app = {
+      icons: [],
+      filteredIcons: [],
+      currentLang: 'en',
+      searchTerm: '',
+      
+      // Translations
+      translations: {
+        en: {
+          title: 'Icon Library',
+          subtitle: 'Click any icon to copy its class name',
+          searchPlaceholder: 'Search icons...',
+          countLabel: 'icons',
+          copiedPrefix: 'Copied: ',
+          loading: 'Loading icons...',
+          noResults: 'No icons found',
+          noResultsDesc: 'Try adjusting your search',
+          footerTip: 'Click any icon to copy its class name.',
+          error: 'Failed to load icons'
+        },
+        zh: {
+          title: '图标库',
+          subtitle: '点击任意图标复制类名',
+          searchPlaceholder: '搜索图标...',
+          countLabel: '个图标',
+          copiedPrefix: '已复制：',
+          loading: '加载图标中...',
+          noResults: '未找到图标',
+          noResultsDesc: '请尝试调整搜索词',
+          footerTip: '点击任意图标复制其类名。',
+          error: '加载图标失败'
+        }
+      }
+    };
+
+    // Initialize application
+    async function init() {
+      try {
+        await loadIcons();
+        setupEventListeners();
+        renderIcons();
+        updateCounts();
+      } catch (error) {
+        console.error('Initialization failed:', error);
+        showError();
+      }
+    }
+
+    // Load icons from JSON file
+    async function loadIcons() {
+      try {
+        const response = await fetch('iconfont.json');
+        if (!response.ok) throw new Error('Failed to fetch icons');
+        
+        const data = await response.json();
+        app.icons = data.glyphs || [];
+        app.filteredIcons = [...app.icons];
+        
+        console.log(`Loaded ${app.icons.length} icons`);
+      } catch (error) {
+        console.error('Error loading icons:', error);
+        throw error;
+      }
+    }
+
+    // Render icons to the grid
+    function renderIcons() {
+      const grid = document.getElementById('iconGrid');
+      
+      if (!app.filteredIcons.length) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">🔍</div>
+            <h3>${app.translations[app.currentLang].noResults}</h3>
+            <p>${app.translations[app.currentLang].noResultsDesc}</p>
+          </div>
+        `;
+        return;
+      }
+      
+      const iconsHTML = app.filteredIcons.map(icon => {
+        const className = icon.font_class || icon.name;
+        const iconInfo = iconNameMap[className] || { zh: className, en: className };
+        const zhName = iconInfo.zh;
+        const enName = iconInfo.en;
+        
+        return `
+          <div class="icon-card" data-name="${className}" title="${zhName} / ${enName}">
+            <i class="iconfont icon-${className}"></i>
+            <div class="icon-name">
+              <div class="icon-name-zh">${zhName}</div>
+              <div class="icon-name-en">${enName}</div>
+            </div>
+            <div class="copied-badge">✓</div>
+          </div>
+        `;
+      }).join('');
+      
+      grid.innerHTML = iconsHTML;
+      
+      // Add click handlers
+      grid.querySelectorAll('.icon-card').forEach(card => {
+        card.addEventListener('click', handleIconClick);
+      });
+    }
+
+    // Handle icon click
+    function handleIconClick(event) {
+      const card = event.currentTarget;
+      const iconName = card.dataset.name;
+      
+      copyToClipboard(iconName);
+      
+      // Visual feedback
+      card.classList.add('copied');
+      setTimeout(() => {
+        card.classList.remove('copied');
+      }, 1500);
+    }
+
+    // Copy text to clipboard
+    async function copyToClipboard(text) {
+      try {
+        // Try modern clipboard API first
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          // Fallback for older browsers or non-secure contexts
+          const textarea = document.createElement('textarea');
+          textarea.value = text;
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-999999px';
+          textarea.style.top = '-999999px';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          
+          try {
+            document.execCommand('copy');
+          } catch (err) {
+            console.error('Fallback copy failed:', err);
+          }
+          
+          document.body.removeChild(textarea);
+        }
+        
+        showToast(`${app.translations[app.currentLang].copiedPrefix}${text}`);
+      } catch (error) {
+        console.error('Copy failed:', error);
+        showToast('Copy failed. Please try again.');
+      }
+    }
+
+    // Show toast notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Search functionality
+    function performSearch() {
+      const searchTerm = app.searchTerm.toLowerCase().trim();
+      
+      if (!searchTerm) {
+        app.filteredIcons = [...app.icons];
+      } else {
+        app.filteredIcons = app.icons.filter(icon => {
+          const className = icon.font_class || icon.name || '';
+          const iconInfo = iconNameMap[className] || { zh: className, en: className };
+          
+          // 搜索英文名
+          const enName = iconInfo.en.toLowerCase();
+          // 搜索中文名
+          const zhName = iconInfo.zh.toLowerCase();
+          
+          // Direct substring match for English
+          if (enName.includes(searchTerm)) return true;
+          
+          // Direct match for Chinese
+          if (zhName.includes(searchTerm)) return true;
+          
+          // Fuzzy match for English: check if all characters appear in order
+          let searchIndex = 0;
+          for (let i = 0; i < enName.length && searchIndex < searchTerm.length; i++) {
+            if (enName[i] === searchTerm[searchIndex]) {
+              searchIndex++;
+            }
+          }
+          if (searchIndex === searchTerm.length) return true;
+          
+          return false;
+        });
+      }
+      
+      renderIcons();
+      updateCounts();
+    }
+
+    // Update icon counts
+    function updateCounts() {
+      document.getElementById('visibleCount').textContent = app.filteredIcons.length;
+      document.getElementById('totalCount').textContent = app.icons.length;
+    }
+
+    // Update UI language
+    function updateLanguage() {
+      const t = app.translations[app.currentLang];
+      
+      document.querySelector('.page-title').textContent = t.title;
+      document.querySelector('.page-subtitle').textContent = t.subtitle;
+      document.getElementById('searchInput').placeholder = t.searchPlaceholder;
+      document.querySelector('.count-label').textContent = t.countLabel;
+      document.querySelector('.footer-tip').textContent = t.footerTip;
+      
+      // Re-render if showing empty state
+      if (!app.filteredIcons.length) {
+        renderIcons();
+      }
+    }
+
+    // Show error state
+    function showError() {
+      const grid = document.getElementById('iconGrid');
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">⚠️</div>
+          <h3>${app.translations[app.currentLang].error}</h3>
+          <p>Please check the console for details</p>
+        </div>
+      `;
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Search input
+      const searchInput = document.getElementById('searchInput');
+      let searchTimeout;
+      
+      searchInput.addEventListener('input', (e) => {
+        app.searchTerm = e.target.value;
+        
+        // Debounce search
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          performSearch();
+        }, 200);
+      });
+      
+      // Clear search on Escape
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          e.target.value = '';
+          app.searchTerm = '';
+          performSearch();
+        }
+      });
+      
+      // Language switcher
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active state
+          document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          // Update language
+          app.currentLang = btn.dataset.lang;
+          updateLanguage();
+        });
+      });
+    }
+
+    // Start the application
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
