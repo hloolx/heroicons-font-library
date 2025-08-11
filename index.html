@@ -561,7 +561,8 @@
       const card = event.currentTarget;
       const iconName = card.dataset.name;
       
-      copyToClipboard(iconName);
+      // 复制时加上 icon- 前缀
+      copyToClipboard(`icon-${iconName}`);
       
       // Visual feedback
       card.classList.add('copied');
